@@ -19,17 +19,17 @@ def firstNetwork():
 
     info( '*** Adding hosts\n' )
     PC1 = net.addHost( 'PC1')
-    PC2 = net.addHost( 'PC2')
+	PC2 = net.addHost( 'PC2')
 	PC3 = net.addHost( 'PC3')
 	PC4 = net.addHost( 'PC4')
 
     info( '*** Adding switch\n' )
-    s14 = net.addSwitch( 's14' )
+	s14 = net.addSwitch( 's14' )
 	s24 = net.addSwitch( 's24' )
 	s34 = net.addSwitch( 's34' )
     
     info( '*** Creating links\n' )
-    net.addLink( PC1, s14 )
+	net.addLink( PC1, s14 )
 	net.addLink( PC4, s14 )
 
 	net.addLink( PC2, s24 )
