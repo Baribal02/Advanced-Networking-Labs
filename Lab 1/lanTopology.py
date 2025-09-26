@@ -12,23 +12,23 @@ from mininet.log import setLogLevel, info
 "Function definition: This is called from the main function"
 def firstNetwork():
 
-    "Create an empty network and add nodes to it."
-    net = Mininet()
-    info( '*** Adding controller\n' )
-    net.addController( 'c0' )
+	"Create an empty network and add nodes to it."
+	net = Mininet()
+	info( '*** Adding controller\n' )
+	net.addController( 'c0' )
 
-    info( '*** Adding hosts\n' )
+	info( '*** Adding hosts\n' )
     PC1 = net.addHost( 'PC1')
 	PC2 = net.addHost( 'PC2')
 	PC3 = net.addHost( 'PC3')
 	PC4 = net.addHost( 'PC4')
 
-    info( '*** Adding switch\n' )
+	info( '*** Adding switch\n' )
 	s14 = net.addSwitch( 's14' )
 	s24 = net.addSwitch( 's24' )
 	s34 = net.addSwitch( 's34' )
     
-    info( '*** Creating links\n' )
+	info( '*** Creating links\n' )
 	net.addLink( PC1, s14 )
 	net.addLink( PC4, s14 )
 
@@ -38,23 +38,23 @@ def firstNetwork():
 	net.addLink( PC3, s34 )
 	net.addLink( PC4, s34 )
     
-    info( '*** Starting network\n')
-    net.start()
+	info( '*** Starting network\n')
+	net.start()
 
-    "This is used to run commands on the hosts"
+	"This is used to run commands on the hosts"
 
-    info( '*** Starting terminals on hosts\n' )
-    PC1.cmd(
-  'xterm '
-  '-xrm "XTerm.vt100.allowTitleOps: false" '
-  '-xrm "XTerm.vt100.selectToClipboard: true" '
-  '-xrm "XTerm.vt100.translations: #override '
-  'Ctrl Shift <Key>C: copy-selection(CLIPBOARD)\\n'
-  'Ctrl Shift <Key>V: insert-selection(CLIPBOARD)\\n'
-  'Shift <Key>Insert: insert-selection(CLIPBOARD)" '
-  '-T PC1 &'
+	info( '*** Starting terminals on hosts\n' )
+	PC1.cmd(
+	'xterm '
+	'-xrm "XTerm.vt100.allowTitleOps: false" '
+	'-xrm "XTerm.vt100.selectToClipboard: true" '
+	'-xrm "XTerm.vt100.translations: #override '
+	'Ctrl Shift <Key>C: copy-selection(CLIPBOARD)\\n'
+	'Ctrl Shift <Key>V: insert-selection(CLIPBOARD)\\n'
+	'Shift <Key>Insert: insert-selection(CLIPBOARD)" '
+	'-T PC1 &'
 )
-    PC2.cmd(
+	PC2.cmd(
     'xterm '
     '-xrm "XTerm.vt100.allowTitleOps: false" '
     '-xrm "XTerm.vt100.selectToClipboard: true" '
@@ -64,7 +64,7 @@ def firstNetwork():
     'Shift <Key>Insert: insert-selection(CLIPBOARD)" '
     '-T PC2 &'
 )
-    PC3.cmd(
+	PC3.cmd(
     'xterm '
     '-xrm "XTerm.vt100.allowTitleOps: false" '
     '-xrm "XTerm.vt100.selectToClipboard: true" '
@@ -74,7 +74,7 @@ def firstNetwork():
     'Shift <Key>Insert: insert-selection(CLIPBOARD)" '
     '-T PC3 &'
 )
-    PC4.cmd(
+	PC4.cmd(
     'xterm '
     '-xrm "XTerm.vt100.allowTitleOps: false" '
     '-xrm "XTerm.vt100.selectToClipboard: true" '
@@ -85,19 +85,20 @@ def firstNetwork():
     '-T PC4 &'
 )
 
-    info( '*** Running the command line interface\n' )
-    CLI( net )
+	info( '*** Running the command line interface\n' )
+	CLI( net )
 	
-    info( '*** Closing the terminals on the hosts\n' )
-    PC1.cmd("killall xterm")
-    PC2.cmd("killall xterm")
-    PC3.cmd("killall xterm")
-    PC4.cmd("killall xterm")
+	info( '*** Closing the terminals on the hosts\n' )
+	PC1.cmd("killall xterm")
+	PC2.cmd("killall xterm")
+	PC3.cmd("killall xterm")
+	PC4.cmd("killall xterm")
 	
-    info( '*** Stopping network' )
-    net.stop()
+	info( '*** Stopping network' )
+	net.stop()
 
 "main Function: This is called when the Python file is run"
 if __name__ == '__main__':
-    setLogLevel( 'info' )
-    firstNetwork()
+	setLogLevel( 'info' )
+	firstNetwork()
+	
