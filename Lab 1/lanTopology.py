@@ -18,7 +18,7 @@ def firstNetwork():
 	net.addController( 'c0' )
 
 	info( '*** Adding hosts\n' )
-    PC1 = net.addHost( 'PC1')
+	PC1 = net.addHost( 'PC1')
 	PC2 = net.addHost( 'PC2')
 	PC3 = net.addHost( 'PC3')
 	PC4 = net.addHost( 'PC4')
