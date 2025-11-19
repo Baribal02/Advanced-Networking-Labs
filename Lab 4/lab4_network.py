@@ -109,8 +109,7 @@ def Lab4_Network():
         host.cmd('ip -6 addr add 2001:1:0:24::%s0/64 dev h%s-eth1' % (index, index))
         host.cmd('ip -6 route add default via 2001:1:0:24::2')
         host.cmd('xterm -xrm \'XTerm.vt100.allowTitleOps: false\' -T h%s &' % index)
-
-
+    
     index=0
     for router in routers:
         index+=1
@@ -120,22 +119,27 @@ def Lab4_Network():
     r1.cmd('sysctl -w net.ipv4.conf.r1-eth1.rp_filter=0')
     r1.cmd('sysctl -w net.ipv4.conf.r1-eth2.rp_filter=0')
     r1.cmd('sysctl -w net.ipv4.conf.r1-eth3.rp_filter=0')
+    r1.cmd('/usr/lib/frr/zebra -d -f /home/advnet/Desktop/lab4/configs/zebra_r1.cfg -i /home/advnet/Desktop/lab4/run/zebra_r1.pid -z /home/advnet/Desktop/lab4/run/frr_r1.api -u frr -g frr')
 
     r2.cmd('ip addr add 10.10.24.2/24 dev r2-eth4')
     r2.cmd('sysctl -w net.ipv4.conf.r2-eth1.rp_filter=0')
     r2.cmd('sysctl -w net.ipv4.conf.r2-eth2.rp_filter=0')
     r2.cmd('sysctl -w net.ipv4.conf.r2-eth3.rp_filter=0')
     r2.cmd('sysctl -w net.ipv4.conf.r2-eth4.rp_filter=0')
+    r2.cmd('/usr/lib/frr/zebra -d -f /home/advnet/Desktop/lab4/configs/zebra_r2.cfg -i /home/advnet/Desktop/lab4/run/zebra_r2.pid -z /home/advnet/Desktop/lab4/run/frr_r2.api -u frr -g frr')
 
     r3.cmd('sysctl -w net.ipv4.conf.r3-eth1.rp_filter=0')
     r3.cmd('sysctl -w net.ipv4.conf.r3-eth2.rp_filter=0')
+    r3.cmd('/usr/lib/frr/zebra -d -f /home/advnet/Desktop/lab4/configs/zebra_r3.cfg -i /home/advnet/Desktop/lab4/run/zebra_r3.pid -z /home/advnet/Desktop/lab4/run/frr_r3.api -u frr -g frr')
 
     r4.cmd('sysctl -w net.ipv4.conf.r4-eth1.rp_filter=0')
     r4.cmd('sysctl -w net.ipv4.conf.r4-eth2.rp_filter=0')
+    r4.cmd('/usr/lib/frr/zebra -d -f /home/advnet/Desktop/lab4/configs/zebra_r4.cfg -i /home/advnet/Desktop/lab4/run/zebra_r4.pid -z /home/advnet/Desktop/lab4/run/frr_r4.api -u frr -g frr')
 
     r5.cmd('sysctl -w net.ipv4.conf.r5-eth1.rp_filter=0')
     r5.cmd('sysctl -w net.ipv4.conf.r5-eth2.rp_filter=0')
     r5.cmd('sysctl -w net.ipv4.conf.r5-eth3.rp_filter=0')
+    r5.cmd('/usr/lib/frr/zebra -d -f /home/advnet/Desktop/lab4/configs/zebra_r5.cfg -i /home/advnet/Desktop/lab4/run/zebra_r5.pid -z /home/advnet/Desktop/lab4/run/frr_r5.api -u frr -g frr')
 
 
 
