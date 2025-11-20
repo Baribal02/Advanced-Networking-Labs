@@ -137,7 +137,7 @@ def Lab4_Network():
 
     r4.cmd('sysctl -w net.ipv4.conf.r4-eth1.rp_filter=0')
     r4.cmd('sysctl -w net.ipv4.conf.r4-eth2.rp_filter=0')
-    r4.cmd('/usr/lib/frr/zebra -d -f /home/advnet/Desktop/lab4/configs/zebra_r4.cfg -i /home/advnet/Desktop/lab4/run/zebra_r4.pid -z /home/advnet/Desktop/lab4/run/frr_r4.api -u frr -g frr')$
+    r4.cmd('/usr/lib/frr/zebra -d -f /home/advnet/Desktop/lab4/configs/zebra_r4.cfg -i /home/advnet/Desktop/lab4/run/zebra_r4.pid -z /home/advnet/Desktop/lab4/run/frr_r4.api -u frr -g frr')
     # r4.cmd('/usr/lib/frr/ospfd -d -f /home/advnet/Desktop/lab4/configs/ospfd_r4.cfg -i /home/advnet/Desktop/lab4/run/ospfd_r4.pid -z /home/advnet/Desktop/lab4/run/frr_r4.api -u frr -g frr')
 
     r5.cmd('sysctl -w net.ipv4.conf.r5-eth1.rp_filter=0')
